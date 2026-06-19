@@ -2,14 +2,13 @@
 using namespace std;
 int n{};
 int maxq(vector<vector<int>> &score, int k, vector<int> &p) {
-  int best{};
   if (k >= n)
     return 0;
   int total{};
   int empt{};
   p[k] = -1;
   empt = maxq(score, k + 1, p);
-
+  int best = empt;  
   // 檢查對角線
   vector<bool> vaild(n);
   for (int c = 0; c < n; c++)
@@ -34,19 +33,16 @@ int maxq(vector<vector<int>> &score, int k, vector<int> &p) {
   }
   return best;
 }
-
 int main() {
   scanf("%d", &n);
   vector<vector<int>> score(n, vector<int>(n));
   vector<int> p(n);
   // 讀入二為陣列
   for (int i = 0; i < n; i++) {
-
     for (int j = 0; j < n; j++) {
       scanf("%d", &score[i][j]);
     }
   }
   printf("%d", maxq(score, 0, p));
-
   return 0;
 }
