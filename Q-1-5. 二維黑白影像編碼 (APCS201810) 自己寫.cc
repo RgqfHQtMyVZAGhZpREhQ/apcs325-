@@ -47,5 +47,5 @@ int main()
         printf("%d", sum(n));
     }
     else return -1;
-    system("pause");
+    // system("pause");
 }
