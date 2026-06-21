@@ -8,7 +8,7 @@ long long ans{};
 
 void rec(int i, long long sum) 
 {
-    if (sum > P) return; // 這個我當初也沒考慮到，ai寫的，剪枝
+    if (sum > P) return; 
 
     if (i >= n) 
     {
